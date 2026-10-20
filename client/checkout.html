@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Smart Store</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <h2>Smart Store</h2>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="products.html">
+                        Products
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cart.html">
+                        Cart
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CHECKOUT HEADER
+    ====================================================== -->
+
+    <main>
+
+        <section class="checkout-section">
+
+            <div class="section-title">
+
+                <h2>
+                    Checkout
+                </h2>
+
+                <p>
+                    Complete your order securely
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CHECKOUT CONTAINER
+            ================================================== -->
+
+            <div class="checkout-container">
+
+
+
+                <!-- =============================================
+                     CUSTOMER DETAILS
+                ============================================== -->
+
+                <div class="checkout-box">
+
+                    <h2>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Delivery Information
+
+                    </h2>
+
+
+
+                    <form id="checkoutForm">
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="input-box">
+
+                            <label for="name">
+
+                                Full Name
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="input-box">
+
+                            <label for="address">
+
+                                Delivery Address
+
+                            </label>
+
+
+                            <textarea
+                                id="address"
+                                placeholder="House No, Street, City, State, PIN Code"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="input-box">
+
+                            <label for="phone">
+
+                                Phone Number
+
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             PAYMENT METHOD
+                        ====================================== -->
+
+                        <h2>
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            Payment Method
+
+                        </h2>
+
+
+
+                        <!-- CASH ON DELIVERY -->
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="COD"
+                                checked
+                            >
+
+                            <span>
+                                Cash on Delivery
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- UPI -->
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="UPI"
+                            >
+
+                            <span>
+                                UPI Payment
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- CARD -->
+
+                        <label class="payment-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="CARD"
+                            >
+
+                            <span>
+                                Credit / Debit Card
+                            </span>
+
+                        </label>
+
+
+
+                        <!-- PLACE ORDER BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="place-order-btn"
+                        >
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Place Order
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     ORDER SUMMARY
+                ============================================== -->
+
+                <div class="checkout-box">
+
+                    <h2>
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        Order Summary
+
+                    </h2>
+
+
+
+                    <div id="checkoutSummary">
+
+
+                        <!-- SUBTOTAL -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <span id="subtotal">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- DELIVERY -->
+
+                        <div class="summary-row">
+
+                            <span>
+                                Delivery
+                            </span>
+
+                            <span id="delivery">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- TOTAL -->
+
+                        <div class="summary-row summary-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <span id="total">
+                                ₹0
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- SECURITY MESSAGE -->
+
+                    <p
+                        style="
+                            margin-top:20px;
+                            color:#777;
+                            font-size:14px;
+                        "
+                    >
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Your information is securely processed.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <!-- STORE -->
+
+            <div>
+
+                <h3>
+                    Smart Store
+                </h3>
+
+
+                <p>
+
+                    Your trusted online store for electronics,
+                    gadgets and everyday technology.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="products.html">
+                            Products
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="cart.html">
+                            Cart
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CUSTOMER SUPPORT -->
+
+            <div>
+
+                <h3>
+                    Customer Support
+                </h3>
+
+
+                <p>
+                    Email: support@smartstore.com
+                </p>
+
+
+                <p>
+                    Phone: +91 98765 43210
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            © 2026 Smart Store. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         CHECKOUT JAVASCRIPT
+         
+         IMPORTANT:
+         JavaScript is inside <script>, so it will NOT
+         appear as text on the webpage.
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           GET USER ID FROM LOGIN TOKEN
+        ====================================================== */
+
+        function getUserIdFromToken() {
+
+            const token =
+                localStorage.getItem("token");
+
+
+            if (!token) {
+
+                return null;
+
+            }
+
+
+            try {
+
+                const payload =
+                    JSON.parse(
+                        atob(
+                            token.split(".")[1]
+                        )
+                    );
+
+
+                /*
+                    Login JWT normally contains:
+
+                    {
+                        id: "MongoDB User ID"
+                    }
+
+                    Some projects may use:
+
+                    userId
+                    _id
+                */
+
+                return (
+                    payload.id ||
+                    payload.userId ||
+                    payload._id ||
+                    null
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Unable to read login token:",
+                    error
+                );
+
+                return null;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           LOAD CART
+        ====================================================== */
+
+        function getCart() {
+
+            try {
+
+                const cart =
+                    JSON.parse(
+                        localStorage.getItem("cart")
+                    ) || [];
+
+
+                return cart;
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Unable to load cart:",
+                    error
+                );
+
+                return [];
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           DISPLAY CHECKOUT TOTAL
+        ====================================================== */
+
+        function loadCheckoutSummary() {
+
+            const cart =
+                getCart();
+
+
+            let subtotal = 0;
+
+
+            cart.forEach(function(item) {
+
+                const price =
+                    Number(item.price) || 0;
+
+
+                const quantity =
+                    Number(item.quantity) || 1;
+
+
+                subtotal +=
+                    price * quantity;
+
+            });
+
+
+
+            /*
+                Delivery:
+
+                Cart has products
+                → ₹40 delivery
+
+                Cart empty
+                → ₹0 delivery
+            */
+
+            const delivery =
+                cart.length > 0
+                    ? 40
+                    : 0;
+
+
+            const total =
+                subtotal + delivery;
+
+
+
+            /* SUBTOTAL */
+
+            const subtotalElement =
+                document.getElementById(
+                    "subtotal"
+                );
+
+
+            if (subtotalElement) {
+
+                subtotalElement.textContent =
+                    "₹" + subtotal;
+
+            }
+
+
+
+            /* DELIVERY */
+
+            const deliveryElement =
+                document.getElementById(
+                    "delivery"
+                );
+
+
+            if (deliveryElement) {
+
+                deliveryElement.textContent =
+                    "₹" + delivery;
+
+            }
+
+
+
+            /* TOTAL */
+
+            const totalElement =
+                document.getElementById(
+                    "total"
+                );
+
+
+            if (totalElement) {
+
+                totalElement.textContent =
+                    "₹" + total;
+
+            }
+
+
+
+            return {
+
+                subtotal: subtotal,
+
+                delivery: delivery,
+
+                total: total
+
+            };
+
+        }
+
+
+
+        /* =====================================================
+           CHECKOUT FORM
+        ====================================================== */
+
+        const checkoutForm =
+            document.getElementById(
+                "checkoutForm"
+            );
+
+
+        if (checkoutForm) {
+
+
+            checkoutForm.addEventListener(
+                "submit",
+                async function(event) {
+
+
+                    event.preventDefault();
+
+
+
+                    /* =========================================
+                       CHECK LOGIN
+                    ========================================== */
+
+                    const token =
+                        localStorage.getItem(
+                            "token"
+                        );
+
+
+                    if (!token) {
+
+                        alert(
+                            "Please login before placing an order."
+                        );
+
+
+                        window.location.href =
+                            "login.html";
+
+
+                        return;
+
+                    }
+
+
+
+                    /* =========================================
+                       GET USER ID
+                    ========================================== */
+
+                    const userId =
+                        getUserIdFromToken();
+
+
+                    if (!userId) {
+
+                        alert(
+                            "Unable to identify your account. Please login again."
+                        );
+
+
+                        localStorage.removeItem(
+                            "token"
+                        );
+
+
+                        window.location.href =
+                            "login.html";
+
+
+                        return;
+
+                    }
+
+
+
+                    /* =========================================
+                       GET CART
+                    ========================================== */
+
+                    const cart =
+                        getCart();
+
+
+                    if (cart.length === 0) {
+
+                        alert(
+                            "Your cart is empty."
+                        );
+
+
+                        window.location.href =
+                            "cart.html";
+
+
+                        return;
+
+                    }
+
+
+
+                    /* =========================================
+                       CUSTOMER DETAILS
+                    ========================================== */
+
+                    const name =
+                        document
+                            .getElementById("name")
+                            .value
+                            .trim();
+
+
+                    const address =
+                        document
+                            .getElementById("address")
+                            .value
+                            .trim();
+
+
+                    const phone =
+                        document
+                            .getElementById("phone")
+                            .value
+                            .trim();
+
+
+
+                    /* =========================================
+                       BASIC VALIDATION
+                    ========================================== */
+
+                    if (!name) {
+
+                        alert(
+                            "Please enter your full name."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (!address) {
+
+                        alert(
+                            "Please enter your delivery address."
+                        );
+
+                        return;
+
+                    }
+
+
+                    if (!phone) {
+
+                        alert(
+                            "Please enter your phone number."
+                        );
+
+                        return;
+
+                    }
+
+
+
+                    /* =========================================
+                       PHONE VALIDATION
+                    ========================================== */
+
+                    const phonePattern =
+                        /^[6-9]\d{9}$/;
+
+
+                    if (!phonePattern.test(phone)) {
+
+                        alert(
+                            "Please enter a valid 10-digit Indian phone number."
+                        );
+
+                        return;
+
+                    }
+
+
+
+                    /* =========================================
+                       PAYMENT METHOD
+                    ========================================== */
+
+                    const selectedPayment =
+                        document.querySelector(
+                            'input[name="payment"]:checked'
+                        );
+
+
+                    if (!selectedPayment) {
+
+                        alert(
+                            "Please select a payment method."
+                        );
+
+                        return;
+
+                    }
+
+
+                    const paymentMethod =
+                        selectedPayment.value;
+
+
+
+                    /* =========================================
+                       CALCULATE TOTAL
+                    ========================================== */
+
+                    const summary =
+                        loadCheckoutSummary();
+
+
+
+                    /* =========================================
+                       PREPARE ORDER ITEMS
+                    ========================================== */
+
+                    const items =
+                        cart.map(function(item) {
+
+                            return {
+
+                                product:
+                                    item._id ||
+                                    item.productId ||
+                                    item.id,
+
+                                quantity:
+                                    Number(
+                                        item.quantity
+                                    ) || 1,
+
+                                price:
+                                    Number(
+                                        item.price
+                                    ) || 0
+
+                            };
+
+                        });
+
+
+
+                    /* =========================================
+                       CHECK PRODUCT IDs
+                    ========================================== */
+
+                    const invalidItem =
+                        items.some(function(item) {
+
+                            return !item.product;
+
+                        });
+
+
+                    if (invalidItem) {
+
+                        alert(
+                            "Some products in your cart are invalid. Please remove them and add them again."
+                        );
+
+                        console.error(
+                            "Invalid cart items:",
+                            items
+                        );
+
+                        return;
+
+                    }
+
+
+
+                    /* =========================================
+                       ORDER DATA
+                    ========================================== */
+
+                    const orderData = {
+
+                        userId: userId,
+
+                        items: items,
+
+                        totalAmount:
+                            summary.total,
+
+                        shippingAddress:
+                            address,
+
+                        phone:
+                            phone,
+
+                        paymentMethod:
+                            paymentMethod
+
+                    };
+
+
+
+                    console.log(
+                        "Order Data:",
+                        orderData
+                    );
+
+
+
+                    /* =========================================
+                       DISABLE BUTTON
+                    ========================================== */
+
+                    const submitButton =
+                        checkoutForm.querySelector(
+                            'button[type="submit"]'
+                        );
+
+
+                    if (submitButton) {
+
+                        submitButton.disabled =
+                            true;
+
+                        submitButton.innerHTML =
+                            '<i class="fa-solid fa-spinner fa-spin"></i> Placing Order...';
+
+                    }
+
+
+
+                    /* =========================================
+                       SEND ORDER TO SERVER
+                    ========================================== */
+
+                    try {
+
+
+                        const response =
+                            await fetch(
+                                "/api/orders",
+                                {
+
+                                    method:
+                                        "POST",
+
+                                    headers: {
+
+                                        "Content-Type":
+                                            "application/json",
+
+                                        "Authorization":
+                                            "Bearer " +
+                                            token
+
+                                    },
+
+                                    body:
+                                        JSON.stringify(
+                                            orderData
+                                        )
+
+                                }
+                            );
+
+
+
+                        /* =====================================
+                           READ SERVER RESPONSE
+                        ====================================== */
+
+                        let data;
+
+
+                        try {
+
+                            data =
+                                await response.json();
+
+                        }
+
+                        catch (jsonError) {
+
+                            data = {
+
+                                message:
+                                    "Invalid response from server."
+
+                            };
+
+                        }
+
+
+
+                        console.log(
+                            "Order Response:",
+                            data
+                        );
+
+
+
+                        /* =====================================
+                           SUCCESS
+                        ====================================== */
+
+                        if (response.ok) {
+
+
+                            alert(
+                                "🎉 Order placed successfully!"
+                            );
+
+
+                            /*
+                                Clear cart
+                            */
+
+                            localStorage.removeItem(
+                                "cart"
+                            );
+
+
+                            /*
+                                Go to home
+                            */
+
+                            window.location.href =
+                                "index.html";
+
+                        }
+
+
+                        /* =====================================
+                           SERVER ERROR
+                        ====================================== */
+
+                        else {
+
+
+                            alert(
+                                data.message ||
+                                "Failed to place order."
+                            );
+
+
+                            if (submitButton) {
+
+                                submitButton.disabled =
+                                    false;
+
+                                submitButton.innerHTML =
+                                    '<i class="fa-solid fa-lock"></i> Place Order';
+
+                            }
+
+                        }
+
+                    }
+
+
+                    /* =========================================
+                       CONNECTION ERROR
+                    ========================================== */
+
+                    catch (error) {
+
+                        console.error(
+                            "Order Error:",
+                            error
+                        );
+
+
+                        alert(
+                            "Unable to connect to the server."
+                        );
+
+
+                        if (submitButton) {
+
+                            submitButton.disabled =
+                                false;
+
+                            submitButton.innerHTML =
+                                '<i class="fa-solid fa-lock"></i> Place Order';
+
+                        }
+
+                    }
+
+                }
+
+            );
+
+        }
+
+
+
+        /* =====================================================
+           LOAD SUMMARY WHEN PAGE OPENS
+        ====================================================== */
+
+        loadCheckoutSummary();
+
+
+    </script>
+
+
+</body>
+
+</html>

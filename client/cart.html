@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Shopping Cart - Smart Store
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <h2>
+            Smart Store
+        </h2>
+
+    </div>
+
+
+    <ul>
+
+        <li>
+
+            <a href="index.html">
+                Home
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="products.html">
+                Products
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="cart.html">
+
+                Cart
+
+                <span id="cartCount">
+                    0
+                </span>
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="register.html">
+                Register
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =====================================================
+     PAGE TITLE
+===================================================== -->
+
+<div class="section-title">
+
+    <h2>
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        Shopping Cart
+
+    </h2>
+
+
+    <p>
+
+        Review your items before checkout
+
+    </p>
+
+</div>
+
+
+
+<!-- =====================================================
+     CART CONTAINER
+===================================================== -->
+
+<div class="cart-container">
+
+
+    <!-- =================================================
+         CART ITEMS
+    ================================================== -->
+
+    <div id="cartItems">
+
+        <!-- Cart items will be loaded by cart.js -->
+
+    </div>
+
+
+
+    <!-- =================================================
+         CART SUMMARY
+    ================================================== -->
+
+    <div class="cart-summary">
+
+        <h2>
+            Cart Summary
+        </h2>
+
+
+        <br>
+
+
+        <div class="summary-row">
+
+            <span>
+                Subtotal
+            </span>
+
+
+            <span id="cartSubtotal">
+
+                ₹0
+
+            </span>
+
+        </div>
+
+
+
+        <div class="summary-row">
+
+            <span>
+                Delivery
+            </span>
+
+
+            <span id="cartDelivery">
+
+                ₹0
+
+            </span>
+
+        </div>
+
+
+
+        <div class="summary-row summary-total">
+
+            <span>
+                Total
+            </span>
+
+
+            <span id="cartTotal">
+
+                ₹0
+
+            </span>
+
+        </div>
+
+
+        <br>
+
+
+
+        <a
+            href="checkout.html"
+            class="btn btn-primary"
+            style="width:100%;text-align:center;"
+        >
+
+            Proceed To Checkout
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <h3>
+                Smart Store
+            </h3>
+
+
+            <p>
+
+                Quality products, secure payments
+                and fast delivery.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+
+            <ul>
+
+                <li>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="products.html">
+                        Products
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="cart.html">
+                        Cart
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+
+            <p>
+                support@smartstore.com
+            </p>
+
+
+            <p>
+                +91 98765 43210
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        © 2026 Smart Store.
+        All Rights Reserved.
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     CART JAVASCRIPT
+===================================================== -->
+
+<script src="js/cart.js"></script>
+
+
+</body>
+
+</html>

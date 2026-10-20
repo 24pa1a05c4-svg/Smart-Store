@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products - Smart Store</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🛒 Smart Store
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="products.html">
+            Products
+        </a>
+
+        <a href="cart.html">
+            Cart
+            <span id="cartCount">0</span>
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a href="register.html">
+            Register
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     PRODUCTS PAGE
+========================= -->
+
+<main class="products-page">
+
+
+    <h1>
+        Our Products
+    </h1>
+
+
+    <p class="page-subtitle">
+        Discover the best products from trusted sellers.
+    </p>
+
+
+
+    <!-- =========================
+         SEARCH BOX
+    ========================= -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search products by name or brand..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+
+    <!-- =========================
+         CATEGORY BUTTONS
+    ========================= -->
+
+    <div class="categories">
+
+        <button
+            type="button"
+            class="category-btn active"
+            data-category="All"
+        >
+            🛍️ All
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="Laptops"
+        >
+            💻 Laptops
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="Mobiles"
+        >
+            📱 Mobiles
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="Accessories"
+        >
+            🎧 Accessories
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="Smart Watches"
+        >
+            ⌚ Smart Watches
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="Home Appliances"
+        >
+            🏠 Home Appliances
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         PRODUCTS HEADER
+    ========================= -->
+
+    <div class="products-header">
+
+        <h3 id="productCount">
+            Loading products...
+        </h3>
+
+
+        <select id="sortProducts">
+
+            <option value="default">
+                Sort By
+            </option>
+
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+
+            <option value="rating">
+                Highest Rated
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- =========================
+         LOADING MESSAGE
+    ========================= -->
+
+    <div
+        id="loadingMessage"
+        class="loading-message"
+    >
+
+        <h2>
+            ⏳ Loading products...
+        </h2>
+
+        <p>
+            Please wait while we load the products.
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         PRODUCTS CONTAINER
+    ========================= -->
+
+    <section
+        id="productsContainer"
+        class="products-grid"
+    >
+
+    </section>
+
+
+
+    <!-- =========================
+         NO PRODUCTS
+    ========================= -->
+
+    <div
+        id="noProducts"
+        class="no-products"
+        style="display: none;"
+    >
+
+        <h2>
+            😔 No products found
+        </h2>
+
+        <p>
+            Try another search or category.
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         ERROR MESSAGE
+    ========================= -->
+
+    <div
+        id="errorMessage"
+        class="error-box"
+        style="display: none;"
+    >
+
+        <h2>
+            ⚠️ Unable to load products
+        </h2>
+
+        <p>
+            Please make sure your server is running.
+        </p>
+
+        <button
+            type="button"
+            onclick="loadProducts()"
+        >
+            🔄 Try Again
+        </button>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Smart Store | All Rights Reserved
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="js/products.js"></script>
+
+
+</body>
+
+</html>
