@@ -49,7 +49,17 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on port ${PORT}`);
     console.log(
-        "JWT_SECRET configured:",
-        Boolean(process.env.JWT_SECRET)
-    );
+    "JWT_SECRET configured:",
+    Boolean(process.env.JWT_SECRET)
+);
+
+console.log(
+    "JWT_SECRET length:",
+    process.env.JWT_SECRET?.length ?? 0
+);
+
+console.log(
+    "NODE_ENV:",
+    process.env.NODE_ENV
+);
 });
