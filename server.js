@@ -1,5 +1,11 @@
 
-require("dotenv").config();
+const dotenv = require("dotenv");
+
+const dotenvResult = dotenv.config();
+
+console.log("Dotenv loaded:", !dotenvResult.error);
+console.log("JWT_SECRET exists:", Boolean(process.env.JWT_SECRET));
+console.log("JWT_SECRET length:", process.env.JWT_SECRET?.length ?? 0);
 
 const express = require("express");
 const path = require("path");
