@@ -1,14 +1,19 @@
-
-const dotenv = require("dotenv");
-
-const dotenvResult = dotenv.config();
-
-console.log("Dotenv loaded:", !dotenvResult.error);
-console.log("JWT_SECRET exists:", Boolean(process.env.JWT_SECRET));
-console.log("JWT_SECRET length:", process.env.JWT_SECRET?.length ?? 0);
+require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
+
+console.log(
+    "JWT_SECRET diagnostic:",
+    JSON.stringify({
+        exists: Object.prototype.hasOwnProperty.call(
+            process.env,
+            "JWT_SECRET"
+        ),
+        nonEmpty: Boolean(process.env.JWT_SECRET?.trim()),
+        length: process.env.JWT_SECRET?.length ?? 0
+    })
+);
 
 const connectDB = require("./config/db");
 
