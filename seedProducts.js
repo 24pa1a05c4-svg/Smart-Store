@@ -2879,12 +2879,19 @@ const seedProducts = async () => {
 
         console.log("\n🎉 Product seeding completed successfully!");
 
-    } catch (error) {
+    }catch (error) {
+    console.error("❌ Error seeding products:");
+    console.error("Name:", error.name);
+    console.error("Message:", error.message);
 
-        console.error("❌ Error seeding products:");
-        console.error(error.message);
-
-    } finally {
+    if (error.reason?.servers) {
+        for (const [address, server] of error.reason.servers) {
+            console.error(`\nServer: ${address}`);
+            console.error("Server error:", server.error?.name);
+            console.error("Server message:", server.error?.message);
+        }
+    }
+}finally {
 
         await mongoose.connection.close();
 
